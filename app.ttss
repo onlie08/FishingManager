@@ -1,0 +1,18 @@
+.footer-menu {
+    height: 100px;  /* 根据设计增加高度 */
+    display: flex;
+    justify-content: space-between;
+    background-color: #4CAF50;
+    padding: 16px 0;
+    font-size: 30px;  /* 根据需要增大字体大小 */
+}
+
+.footer-button {
+    flex: 1;
+    color: #ffffff;  /* 常规状态下文字颜色 */
+    font-size: 30rpx;  /* 根据需要增大字体大小 */
+}
+
+.footer-button-selected {
+    color: #ffffff; /* 选中状态下文字颜色，可以是不同的颜色 */
+}

@@ -1,0 +1,18 @@
+<view class="container">
+    <!-- 顶部导航栏 -->
+    <view class="header">
+        <text class="title">抽号</text>
+        <text class="user-info" bindtap="onUserProfile">用户信息</text>
+    </view>
+
+    <!-- 抽号区域 -->
+    <view class="main-content">
+        <text class="instruction">请点击下方按钮进行抽号</text>
+        <button class="scan-button" bindtap="onScanButtonClick">扫码抽钓号</button>
+
+        <view class="result-area" wx:if="{{number}}">
+            <text class="result-text">您抽到的号码是：{{number}}</text>
+        </view>
+    </view>
+
+</view>

@@ -1,0 +1,20 @@
+<view class="container">
+    <!-- 顶部导航栏 -->
+    <view class="header">
+        <text class="title">钓场名称</text>
+        <text class="user-info" bindtap="onUserProfile">用户信息</text>
+    </view>
+
+    <!-- 中央内容区 -->
+    <view class="banner">
+        <text class="banner-text">你好陈香宁</text>
+    </view>
+
+    <!-- 底部菜单栏 -->
+    <view class="footer-menu">
+        <button class="footer-button" bindtap="onHome">首页</button>
+        <button class="footer-button" bindtap="onScan">抽号</button>
+        <button class="footer-button" bindtap="onService">服务</button>
+        <button class="footer-button" bindtap="onMyProfile">我的</button>
+    </view>
+</view>

@@ -1,0 +1,14 @@
+<view class="container">
+    <!-- 顶部导航栏 -->
+    <view class="header">
+        <text class="title">钓场名称</text>
+        <text class="user-info" bindtap="onUserProfile">用户信息</text>
+    </view>
+
+    <!-- 中央内容区 -->
+    <view class="banner">
+        <text class="banner-text">你好陈香宁</text>
+    </view>
+
+
+</view>

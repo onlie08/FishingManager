@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/scan/scan",
+    "pages/service/service",
+    "pages/my/my"
+  ],
+  "window": {
+    "navigationBarTitleText": "钓场小程序",
+    "navigationBarBackgroundColor": "#4CAF50",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#ffffff",
+    "selectedColor": "#4CAF50",
+    "backgroundColor": "#4CAF50",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "res/image/home_fill.png",
+        "selectedIconPath": "res/image/home_fill.png"
+      },
+      {
+        "pagePath": "pages/scan/scan",
+        "text": "抽号",
+        "iconPath": "res/image/home_fill.png",
+        "selectedIconPath": "res/image/home_fill.png"
+      },
+      {
+        "pagePath": "pages/service/service",
+        "text": "服务",
+        "iconPath": "res/image/home_fill.png",
+        "selectedIconPath": "res/image/home_fill.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "res/image/home_fill.png",
+        "selectedIconPath": "res/image/home_fill.png"
+      }
+    ],
+    "height": 100,
+    "fontSize": 40
+  }
+}
