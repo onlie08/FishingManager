@@ -1,0 +1,68 @@
+/* pages/抽号管理/抽号管理.ttss */
+.容器 {
+    padding: 20px; /* 加大左右边距 */
+    background-color: #f5f5f5;
+  }
+  
+  .模块标题 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold; /* 加粗字体 */
+    margin-bottom: 10px;
+  }
+  
+  .分割线 {
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 15px 0;
+  }
+  
+  .时间输入区,
+  .数量输入区,
+  .号码输入区 {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+  
+  .时间显示 {
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    align-items: center;
+  }
+  
+  input {
+    width: 100%;
+    height: 50px;
+    padding: 10px; /* 增加padding来增加输入框的高度 */
+    font-size: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: block; /* 确保输入框为块级元素 */
+    line-height: 1.5; /* 设置行高以垂直居中文字 */
+  }
+  
+  .保存按钮 {
+    padding: 15px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px; /* 增加顶部间距 */
+  }
+  

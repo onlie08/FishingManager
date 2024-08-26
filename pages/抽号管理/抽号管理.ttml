@@ -1,0 +1,56 @@
+<!-- pages/抽号管理/抽号管理.html -->
+<view class="容器">
+    <!-- 抽号时间设置模块 -->
+    <view class="时间设置模块">
+      <view class="模块标题">
+        <text>抽号时间设置</text>
+      </view>
+      <view class="时间输入区">
+        <label>开放时间:</label>
+        <picker mode="datetime" value="{{开放时间}}" bindchange="设置开放时间">
+          <view class="时间显示">{{开放时间 || '请选择时间'}}</view>
+        </picker>
+      </view>
+      <view class="时间输入区">
+        <label>结束时间:</label>
+        <picker mode="datetime" value="{{结束时间}}" bindchange="设置结束时间">
+          <view class="时间显示">{{结束时间 || '请选择时间'}}</view>
+        </picker>
+      </view>
+    </view>
+  
+    <!-- 分割线 -->
+    <view class="分割线"></view>
+  
+    <!-- 钓位数量设置模块 -->
+    <view class="钓位数量模块">
+      <view class="模块标题">
+        <text>钓位数量设置</text>
+      </view>
+      <view class="数量输入区">
+        <label>总钓位数:</label>
+        <input type="number" value="{{总钓位数}}" bindinput="设置钓位数量" />
+      </view>
+    </view>
+  
+    <!-- 分割线 -->
+    <view class="分割线"></view>
+  
+    <!-- 排除号码设置模块 -->
+    <view class="排除号码模块">
+      <view class="模块标题">
+        <text>排除号码设置</text>
+      </view>
+      <view class="号码输入区">
+        <label>排除号码 (用逗号分隔):</label>
+        <input type="text" value="{{排除号码}}" bindinput="设置排除号码" />
+      </view>
+    </view>
+  
+    <!-- 分割线 -->
+    <view class="分割线"></view>
+    
+    <!-- 保存按钮 -->
+    <button class="保存按钮" bindtap="保存设置">保存设置</button>
+  </view
+  

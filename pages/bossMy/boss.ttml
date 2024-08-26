@@ -1,0 +1,28 @@
+<!-- 钓场老板的“我的”功能页面 -->
+<view class="container">
+  <!-- 个人信息模块 -->
+  <view class="profile-section">
+    <image class="profile-avatar" src="{{user.avatar || 'res/image/home_fill.png'}}" alt="Avatar" />
+    <text class="profile-name">{{user.nickname || '老板'}}</text>
+    <button class="edit-profile-btn" bindtap="editProfile">编辑资料</button>
+  </view>
+
+  <!-- 功能入口列表 -->
+  <view class="功能入口-section">
+    <view class="功能-entry" bindtap="navigateTo抽号管理">
+      <text>抽号管理</text>
+    </view>
+    <view class="功能-entry" bindtap="navigateTo收费管理">
+      <text>收费管理</text>
+    </view>
+    <view class="功能-entry" bindtap="navigateTo数据分析">
+      <text>数据分析</text>
+    </view>
+    <view class="功能-entry" bindtap="navigateTo赛事管理">
+      <text>赛事管理</text>
+    </view>
+    <view class="功能-entry" bindtap="navigateTo反馈管理">
+      <text>反馈管理</text>
+    </view>
+  </view>
+</view>

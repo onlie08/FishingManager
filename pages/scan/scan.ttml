@@ -1,18 +1,50 @@
-<view class="container">
-    <!-- 顶部导航栏 -->
-    <view class="header">
-        <text class="title">抽号</text>
-        <text class="user-info" bindtap="onUserProfile">用户信息</text>
-    </view>
+<ttml>
+    <page>
+        <view class="container" style="padding: 20px">
+            <view class="setting">
+                <text class="title">钓场抽号设置</text>
+                
+                <!-- 日期选择 -->
+                <view>
+                    <text>选择日期：</text>
+                    <datepicker class="date-picker" bind:change="onDateChange" value="{{date}}"></datepicker>
+                </view>
+                
+                <!-- 设置钓位数量 -->
+                <view>
+                    <text>设置钓位数量：</text>
+                    <input type="number" class="input" bind:value="fishingSpots" placeholder="请输入钓位数量" min="1"/>
+                </view>
 
-    <!-- 抽号区域 -->
-    <view class="main-content">
-        <text class="instruction">请点击下方按钮进行抽号</text>
-        <button class="scan-button" bindtap="onScanButtonClick">扫码抽钓号</button>
+                <!-- 排除号码设置 -->
+                <view>
+                    <text>排除号码：</text>
+                    <view>
+                        <switch bind:checked="excludeOdd" onChange="onExcludeOddChange">排除单数</switch>
+                        <switch bind:checked="excludeEven" onChange="onExcludeEvenChange">排除双数</switch>
+                        <switch bind:checked="manualExclude" onChange="onManualExcludeChange">手动排除：</switch>
+                        <input type="text" class="input" bind:value="manualExclusions" placeholder="请输入排除号码，用逗号分隔" hidden="{{!manualExclude}}"/>
+                    </view>
+                </view>
 
-        <view class="result-area" wx:if="{{number}}">
-            <text class="result-text">您抽到的号码是：{{number}}</text>
+                <!-- 提交按钮 -->
+                <button bind:tap="onSubmit">提交设置</button>
+            </view>
+
+            <view class="details">
+                <text class="title">抽号详情</text>
+                <view class="draw-records">
+                    <block wx:for="{{drawDetails}}" wx:key="index">
+                        <view class="record">
+                            <text>用户名: {{item.username}}</text>
+                            <text>抽到号码: {{item.number}}</text>
+                            <text>钓位: {{item.position}}</text>
+                            <text>抽号时间: {{item.drawTime}}</text>
+                            <text>是否重抽: {{item.isRedraw ? '是' : '否'}}</text>
+                        </view>
+                    </block>
+                </view>
+            </view>
         </view>
-    </view>
-
-</view>
+    </page>
+</ttml>

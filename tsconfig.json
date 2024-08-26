@@ -20,7 +20,8 @@
         "types": ["@douyin-microapp/typings"]
     },
     "include": [
-        "./**/*.ts"
+        "./**/*.ts",
+        "typings/**/*.d.ts"
     ],
     "exclude": [
         "node_modules"

@@ -3,7 +3,10 @@
     "pages/home/home",
     "pages/scan/scan",
     "pages/service/service",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/setScan/setScan",
+    "pages/bossMy/boss",
+    "pages/抽号管理/抽号管理"
   ],
   "window": {
     "navigationBarTitleText": "钓场小程序",
@@ -35,7 +38,7 @@
         "selectedIconPath": "res/image/home_fill.png"
       },
       {
-        "pagePath": "pages/my/my",
+        "pagePath": "pages/bossMy/boss",
         "text": "我的",
         "iconPath": "res/image/home_fill.png",
         "selectedIconPath": "res/image/home_fill.png"

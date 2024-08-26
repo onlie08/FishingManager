@@ -1,2 +1,94 @@
-<!-- c:\Users\banma-1098\FishingManagement\钓场管理\pages\my\my.ttml -->
-<text>c:\Users\banma-1098\FishingManagement\钓场管理\pages\my\my.ttml</text>
+<!-- 钓友视角的“我的”功能页面 -->
+<view class="container">
+    <!-- 个人信息模块 -->
+    <view class="profile-section">
+      <image class="profile-avatar" src="{{user.avatar}}" alt="Avatar" />
+      <text class="profile-name">{{user.nickname}}</text>
+      <button class="edit-profile-btn" bindtap="editProfile">编辑资料</button>
+    </view>
+  
+    <!-- 我的抽号模块 -->
+    <view class="抽号-section">
+      <view class="section-header">
+        <text>我的抽号</text>
+        <button class="view-history-btn" bindtap="view抽号History">查看历史</button>
+      </view>
+      <view class="抽号-cards">
+        <block wx:for="{{抽号records}}" wx:key="id">
+          <view class="抽号-card">
+            <text class="钓位-number">钓位号: {{item.钓位号}}</text>
+            <text class="抽号-date">抽号日期: {{item.date}}</text>
+            <text class="钓位-location">钓位位置: {{item.location}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+  
+    <!-- 我的预约模块 -->
+    <view class="预约-section">
+      <view class="section-header">
+        <text>我的预约</text>
+        <button class="view-history-btn" bindtap="view预约History">查看历史</button>
+      </view>
+      <view class="预约-cards">
+        <block wx:for="{{预约records}}" wx:key="id">
+          <view class="预约-card">
+            <text class="预约-date">预约日期: {{item.date}}</text>
+            <text class="钓位-location">钓位位置: {{item.location}}</text>
+            <text class="支付-status">支付状态: {{item.paymentStatus}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+  
+    <!-- 钓场信息模块 -->
+    <view class="钓场-info-section">
+      <button class="info-button" bindtap="view费用标准">费用标准</button>
+      <button class="info-button" bindtap="view规章制度">规章制度</button>
+      <button class="info-button" bindtap="view钓场设施">钓场设施</button>
+      <button class="info-button" bindtap="feedback">意见反馈</button>
+    </view>
+  
+    <!-- 赛事信息模块 -->
+    <view class="赛事-section">
+      <view class="section-header">
+        <text>赛事信息</text>
+      </view>
+      <view class="赛事-list">
+        <block wx:for="{{赛事records}}" wx:key="id">
+          <view class="赛事-item">
+            <text class="赛事-name">赛事名称: {{item.name}}</text>
+            <text class="赛事-date">赛事日期: {{item.date}}</text>
+            <button class="报名-button" bindtap="报名赛事" data-id="{{item.id}}">报名</button>
+          </view>
+        </block>
+      </view>
+    </view>
+  
+    <!-- 用户交流模块 -->
+    <view class="交流-section">
+      <button class="交流-button" bindtap="view交流平台">交流平台</button>
+      <button class="交流-button" bindtap="view个人互动记录">个人互动记录</button>
+    </view>
+  
+    <!-- 我的积分与优惠模块 -->
+    <view class="积分-优惠-section">
+      <view class="section-header">
+        <text>我的积分与优惠</text>
+      </view>
+      <view class="积分-info">
+        <text>当前积分: {{user.points}}</text>
+        <button class="兑换-button" bindtap="view兑换商品">积分兑换</button>
+      </view>
+      <view class="优惠券-info">
+        <block wx:for="{{优惠券records}}" wx:key="id">
+          <view class="优惠券-item">
+            <text class="优惠券-name">优惠券: {{item.name}}</text>
+            <text class="优惠券-status">状态: {{item.status}}</text>
+            <button class="使用-button" bindtap="使用优惠券" data-id="{{item.id}}">使用</button>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+  
