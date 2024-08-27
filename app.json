@@ -1,11 +1,9 @@
 {
   "pages": [
-    "pages/home/home",
-    "pages/scan/scan",
-    "pages/service/service",
-    "pages/my/my",
-    "pages/setScan/setScan",
-    "pages/bossMy/boss",
+    "pages/首页/首页",
+    "pages/抽号/抽号",
+    "pages/活动/活动",
+    "pages/我的/我的",
     "pages/抽号管理/抽号管理"
   ],
   "window": {
@@ -20,25 +18,25 @@
     "borderStyle": "white",
     "list": [
       {
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/首页/首页",
         "text": "首页",
         "iconPath": "res/image/home_fill.png",
         "selectedIconPath": "res/image/home_fill.png"
       },
       {
-        "pagePath": "pages/scan/scan",
+        "pagePath": "pages/抽号/抽号",
         "text": "抽号",
         "iconPath": "res/image/home_fill.png",
         "selectedIconPath": "res/image/home_fill.png"
       },
       {
-        "pagePath": "pages/service/service",
+        "pagePath": "pages/活动/活动",
         "text": "服务",
         "iconPath": "res/image/home_fill.png",
         "selectedIconPath": "res/image/home_fill.png"
       },
       {
-        "pagePath": "pages/bossMy/boss",
+        "pagePath": "pages/我的/我的",
         "text": "我的",
         "iconPath": "res/image/home_fill.png",
         "selectedIconPath": "res/image/home_fill.png"
