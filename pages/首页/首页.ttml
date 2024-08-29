@@ -1,14 +1,46 @@
 <view class="container">
-    <!-- 顶部导航栏 -->
-    <view class="header">
-        <text class="title">钓场名称</text>
-        <text class="user-info" bindtap="onUserProfile">用户信息</text>
-    </view>
+  <!-- 轮播控件 -->
+  <swiper class="swiper" easing-function="default" indicator-dots="{{indicatorDots}}" indicator-color="rgba(0, 0, 0, .3)"
+    indicator-active-color="rgba(0, 0, 0, 1)" current="{{current}}" current-item-id="" previous-margin="" next-margin=""
+    display-multiple-items="{{1}}" autoplay="{{autoplay}}" interval="{{interval}}" circular="{{circular}}"
+    vertical="{{vertical}}" duration="{{duration}}" bindanimationfinish="animationFinish" bindtransition="transition"
+    bindchange="onchange">
+    <block tt:for="{{background}}">
+      <swiper-item>
+        <view class="swiper-item {{item}}"></view>
+      </swiper-item>
+    </block>
+  </swiper>
 
-    <!-- 中央内容区 -->
-    <view class="banner">
-        <text class="banner-text">你好陈香宁</text>
-    </view>
+  <view class="row title">
+    <text class="title-text">武汉百丰垂钓中心</text>
+</view>
 
+<!-- 第二行：钓场评分和介绍 -->
+<view class="row rating">
+    <image class="icon" src="home_fill.png" />
+    <text class="rating-text">钓场评分：10分</text>
+    <text class="intro" bindtap="onIntroClick">钓场介绍></text>
+</view>
 
+<!-- 第三行：位置信息和按钮 -->
+<view class="row location">
+    <image class="icon" src="home_fill.png" />
+    <text class="location-text">湖北省武汉市江夏区汤山街道宁丰路48号</text>
+    <button class="call-button">电话</button>
+    <button class="nav-button">导航</button>
+</view>
+
+<!-- 第四行：距离 -->
+<view class="row distance">
+    <text class="distance-text">距离您 5km</text>
+</view>
+
+  <!-- 功能入口 -->
+  <view class="features">
+    <button class="feature-button" bindtap="navigateTo" data-target="latestFish">最新鱼讯</button>
+    <button class="feature-button" bindtap="navigateTo" data-target="draw">抽号入口</button>
+    <button class="feature-button" bindtap="navigateTo" data-target="contactOwner">联系老板</button>
+    <button class="feature-button" bindtap="navigateTo" data-target="highlights">精彩集锦</button>
+  </view>
 </view>

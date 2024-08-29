@@ -1,35 +1,23 @@
 Page({
-  // 生命周期函数 onLoad
-  onLoad() {
-    // 初始化数据
-    console.log("首页加载完成");
+  data: {
+    background: ['demo-text-1', 'demo-text-2', 'demo-text-3'],
+    indicatorDots: true,
+    vertical: false,
+    autoplay: false,
+    circular: false,
+    current: 0,
+    interval: 2000,
+    duration: 500,
+    truncatedSummary: '',
+    isExpanded: false,
   },
 
-  onUserProfile() {
-    // 处理用户个人信息入口的逻辑
-    tt.navigateTo({
-      url: '/pages/index/index' // 用户信息页面
-    });
+  onImageClick(event: any) {
+    const newsId = event.currentTarget.dataset.newsid;
+    // 在这里实现进入新闻详情页的逻辑
   },
-
-  onScan() {
-    // 跳转到抽号页面
-    tt.navigateTo({
-      url: '/pages/scan/scan' // 抽号页面
-    });
-  },
-
-  onService() {
-    // 跳转到服务页面
-    tt.navigateTo({
-      url: '/pages/service/service' // 服务页面
-    });
-  },
-
-  onMyProfile() {
-    // 跳转到我的页面
-    tt.navigateTo({
-      url: '/pages/my/my' // 我的页面
-    });
+  navigateTo(event: any) {
+    const target = event.currentTarget.dataset.target;
+    // 根据target导航到不同的页面
   }
 });

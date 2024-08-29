@@ -16,3 +16,51 @@
 .footer-button-selected {
     color: #ffffff; /* 选中状态下文字颜色，可以是不同的颜色 */
 }
+
+.demo-text-1{
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background-color: #F85959;
+    background-image: "res/image/test1.jpg";
+    color: #FFFFFF;
+    font-size: 36rpx;
+  }
+  .demo-text-1:before{
+    content: 'A';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .demo-text-2{
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background-color: #2A90D7;
+    color: #FFFFFF;
+    font-size: 36rpx;
+  }
+  .demo-text-2:before{
+    content: 'B';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .demo-text-3{
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background-color: #F4F5F6;
+    color: #353535;
+    font-size: 36rpx;
+  }
+  
+  .demo-text-3:before{
+    content: 'C';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }

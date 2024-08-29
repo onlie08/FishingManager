@@ -55,9 +55,9 @@
   }
   
   .保存按钮 {
-    padding: 15px;
     background-color: #4caf50;
     color: white;
+    height: 50px;
     border: none;
     border-radius: 5px;
     font-size: 18px;

@@ -1,98 +1,54 @@
-.container {
-    flex: 1;
-    background-color: #f2f2f2;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* 确保内容区和底部菜单分开 */
+.容器 {
+    padding: 20px;
+    background-color: #f5f5f5;
 }
 
-.header {
-    height: 80rpx;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #4CAF50;
-    padding: 0 16rpx;
-    border-radius: 8rpx;
+.抽号区域 {
+    margin-top: 0px;
 }
 
-.title {
-    color: #ffffff;
-    font-size: 30rpx;
-    font-weight: bold;
+.信息容器 {
+    display: block; /* 使用块级元素 */
 }
 
-.user-info {
-    color: #ffffff;
-    font-size: 24rpx;
-    cursor: pointer;
+.鱼塘名称, .鱼情介绍, .时间文本 {
+    display: block; /* 确保每个文本在新的一行显示 */
+    margin: 5px 0; /* 设置上下间距 */
+    font-size: 16px; /* 设置字体大小 */
+    color: #333; /* 设置字体颜色 */
 }
 
-.main-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 16rpx;
-}
-
-.instruction {
-    font-size: 28rpx;
-    margin-bottom: 16rpx;
-    color: #333333; /* 说明文本颜色 */
-}
-
-.scan-button {
-    background-color: #4CAF50;
-    color: #ffffff;
-    padding: 16rpx;
-    font-size: 28rpx;
+.抽号按钮 {
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
     border: none;
-    border-radius: 8rpx;
-}
-
-.scan-button:hover {
-    background-color: #45a049; /* 悬停时按钮颜色变换 */
-}
-
-.result-area {
-    margin-top: 20rpx;
-}
-
-.result-text {
-    font-size: 32rpx;
-    color: #4CAF50; /* 结果文本颜色 */
-    font-weight: bold;
-}
-
-.footer-button {
-    flex: 1;
-    background-color: transparent; /* 按钮背景透明 */
-    color: #ffffff;
-    font-size: 32rpx;
-    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
     text-align: center;
-  }
-  
-  .footer-menu {
-    height: 100px;  /* 为底部菜单栏设置高度 */
-    display: flex;
-    justify-content: space-between;
-    background-color: #4CAF50; /* 背景颜色 */
-    padding: 16rpx 0;
+    margin-top: 10px;
+    transition: transform 0.2s;
 }
 
-.footer-button {
-    flex: 1;
-    color: #ffffff; /* 常规状态下文字颜色 */
-    font-size: 30rpx; /* 字体大小 */
+.抽号按钮:active {
+    transform: scale(0.95);
 }
 
-.footer-button:hover {
-    color: #fff; /* 悬停时的文字颜色 */
+.结果显示 {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
 }
 
-.footer-button-selected {
-    color: #ffffff; /* 选中状态下文字颜色，可以是不同的颜色 */
+.号码文本 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d32f2f;
+}
+
+.地图区域 {
+    margin-top: 20px;
+    width: 100%;
+    height: 300px;
 }

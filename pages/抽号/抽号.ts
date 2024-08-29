@@ -1,114 +1,57 @@
-import { Page } from 'taro';
+// import { getLocation } from 'tt';
 
-interface DrawRecord {
-    username: string;
+// 定义抽号结果类型
+interface DrawResult {
     number: number;
-    position: string;
-    drawTime: string;
-    isRedraw: boolean; // 是否重抽
+    position: number;
 }
 
-interface SettingState {
-    date: string;
-    fishingSpots: number;
-    excludeOdd: boolean;
-    excludeEven: boolean;
-    manualExclude: boolean;
-    manualExclusions: string;
-    drawDetails: DrawRecord[];
-    username: string; // 用户名
-}
+Page({
+    data: {
+        isDrawing: false as boolean,
+        drawResult: null as DrawResult | null,
+        fishPondName: "示例鱼塘" as string, // 鱼塘名称
+        fishCondition: "鱼情良好，适合垂钓" as string, // 鱼情介绍
+        latitude: null as number | null, // 默认纬度
+        longitude: null as number | null, // 默认经度
+    },
 
-class DrawingSettingsPage extends Page {
-    state: SettingState = {
-        date: new Date().toISOString().split('T')[0], // 默认当天
-        fishingSpots: 0,
-        excludeOdd: false,
-        excludeEven: false,
-        manualExclude: false,
-        manualExclusions: '',
-        drawDetails: [],
-        username: '' // 初始化用户名
-    };
+    onLoad() {
+        this.getCurrentLocation(); // 页面加载时获取当前位置
+    },
 
-    onDateChange = (event: any) => {
-        this.setState({ date: event.detail.value });
-    };
+    getCurrentLocation() {
+        // getLocation({
+        //     type: 'wgs84',
+        //     success: (res: tt.GetLocationSuccessCallbackResult) => {
+        //         this.setData({
+        //             latitude: res.latitude,
+        //             longitude: res.longitude
+        //         });
+        //     },
+        //     fail: (error: any) => {
+        //         console.error('获取当前位置失败', error);
+        //         // 设置默认位置
+        //         this.setData({
+        //             latitude: 30.6586, // 默认纬度
+        //             longitude: 104.0648 // 默认经度
+        //         });
+        //     }
+        // });
+    },
 
-    onExcludeOddChange = (event: any) => {
-        this.setState({ excludeOdd: event.detail.value });
-    };
+    startDraw() {
+        if (this.data.isDrawing) return; // 防止重复点击
+        this.setData({ isDrawing: true });
 
-    onExcludeEvenChange = (event: any) => {
-        this.setState({ excludeEven: event.detail.value });
-    };
-
-    onManualExcludeChange = (event: any) => {
-        this.setState({ manualExclude: event.detail.value });
-    };
-
-    // 假设有方法设置用户名
-    onUsernameChange = (event: any) => {
-        this.setState({ username: event.detail.value });
-    };
-
-    onSubmit = () => {
-        const { fishingSpots, excludeOdd, excludeEven, manualExclusions, date, username } = this.state;
-
-        // 验证钓位数量是否设置
-        if (!fishingSpots) {
-            Taro.showToast({ title: '请设置钓位数量！', icon: 'none' });
-            return;
-        }
-
-        // 抽号逻辑
-        const exclusions: string[] = [];
-        if (excludeOdd) exclusions.push('odd');
-        if (excludeEven) exclusions.push('even');
-        if (manualExclusions) {
-            exclusions.push(...manualExclusions.split(',').map(num => num.trim()).filter(Boolean));
-        }
-
-        // 假设抽号并记录
-        const newRecord: DrawRecord = {
-            username, // 记录用户名
-            number: this.getRandomNumber(exclusions),
-            position: `钓位 ${fishingSpots}`,
-            drawTime: date,
-            isRedraw: false // 默认不是重抽
-        };
-
-        this.setState({ drawDetails: [...this.state.drawDetails, newRecord] });
-
-        // 重置设置
-        this.setState({
-            date: new Date().toISOString().split('T')[0],
-            fishingSpots: 0,
-            excludeOdd: false,
-            excludeEven: false,
-            manualExclusions: '',
-            username: '' // 清空用户名
-        });
-    };
-
-    getRandomNumber = (exclusions: string[]): number => {
-        let number;
-        do {
-            number = Math.floor(Math.random() * 100) + 1; // 假设号码范围是 1 到 100
-        } while (this.isExcluded(number, exclusions));
-        return number;
-    };
-
-    isExcluded = (number: number, exclusions: string[]): boolean => {
-        const isOdd = number % 2 !== 0;
-        const isEven = number % 2 === 0;
-
-        if (exclusions.includes('odd') && isOdd) return true;
-        if (exclusions.includes('even') && isEven) return true;
-        if (exclusions.includes(number.toString())) return true;
-
-        return false;
-    };
-}
-
-export default DrawingSettingsPage;
+        // 模拟抽号过程
+        setTimeout(() => {
+            // 假设抽号结果
+            const result: DrawResult = {
+                number: Math.floor(Math.random() * 100) + 1, // 随机号码
+                position: Math.floor(Math.random() * 10) + 1, // 随机钓位
+            };
+            this.setData({ drawResult: result, isDrawing: false });
+        }, 2000); // 模拟2秒的抽号时间
+    },
+});
